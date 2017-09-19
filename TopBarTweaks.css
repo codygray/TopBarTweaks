@@ -1,0 +1,93 @@
+/*************************************************
+ * TopBarTweaks, by Cody Gray
+ * (licensed under CC BY)
+ * 
+ * Custom CSS styles
+ *************************************************/
+
+/* Do you want the topbar to be "sticky"? */
+/*
+.top-bar
+{
+  position: fixed;
+}
+*/
+
+/* Prevent clipping of items when using narrow browser window */
+@media screen and (max-width: 1090px)
+{
+  .top-bar .-container
+  {
+    max-width: 98vw;
+  }
+}
+@media screen and (max-width: 920px)
+{
+  .top-bar .-container
+  {
+    max-width: 98vw;
+  }
+}
+
+.top-bar .secondary-nav .-link .indicator-badge:not(._regular)
+{
+  font-size: 130%;       /* increase font size for readability */
+  top: 7px;              /* vertically center */
+  /*font-weight: bold;*/ /* do you want it bold? */
+}
+.top-bar .secondary-nav .-item .-link:hover .indicator-badge
+{
+  top: 2px;
+}
+
+.top-bar .my-profile .-rep,
+.top-bar .my-profile .-badges .badgecount
+{
+  font-size: 130%;
+/*font-weight: bold;*/ /* do you want it bold? */
+}
+
+.badge1, .badge2, .badge3
+{
+  margin-bottom: 2px;  /* vertical alignment with larger text size */
+}
+
+.top-bar .indicator-badge._regular
+{
+  font-size: 130%;
+/*font-weight: bold;*/ /* do you want it bold? */
+}
+
+.top-bar .searchbar input[type="text"].f-input
+{
+  height: 30px;  /* make it less imposing */
+}
+
+/* Swap order of gravatar/reputation and navigation/alerts.
+ * The trick used here is courtesy of thirtydot, via Stack Overflow
+ * (https://stackoverflow.com/a/7430355).
+ */
+.top-bar .-actions
+{
+  display: -webkit-box;
+  display:   -moz-box;
+  display:        box;
+
+  -webkit-box-orient: horizontal;
+     -moz-box-orient: horizontal;
+          box-orient: horizontal;
+}
+.top-bar .secondary-nav
+{
+  -webkit-box-ordinal-group: 1;
+     -moz-box-ordinal-group: 1;
+          box-ordinal-group: 1;
+}
+.top-bar .my-profile
+{
+  -webkit-box-ordinal-group: 2;
+     -moz-box-ordinal-group: 2;
+          box-ordinal-group: 2;
+  border-left: 1px solid rgba(132,141,149,0.2);  /* same divider as used for mod tools */
+}
+
