@@ -60,10 +60,10 @@ $('.top-bar .-dialog-container').on('DOMNodeInserted', function(e)
   {
     var child = $('.header .-right');
     child.empty();
-    child.append('<a href="https://stackoverflow.com/admin/links">links</a>');
+    child.append('<a href="/admin/links">links</a>');
     child.append(' • ');
-    child.append('<a href="https://stackoverflow.com/admin">history</a>');
+    child.append('<a href="/admin">history</a>');
     child.append(' • ');
-    child.append('<a href="https://stackoverflow.com/admin/dashboard">flags</a>');
+    child.append('<a href="/admin/dashboard">flags</a>');
   }
 });
