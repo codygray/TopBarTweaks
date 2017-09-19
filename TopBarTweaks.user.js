@@ -24,7 +24,8 @@ $('.top-bar .-logo').replaceWith(function()
   return $('<a/>', {
                      'class': '-logo js-gps-track',
                       href   : $('.top-bar .-dialog-container .siteSwitcher-dialog a.current-site-link').attr('href'),
-                      html   : this.innerHTML
+                      style  : 'margin:0;padding:0;',
+                      html   : '<img src="' + $('head link[rel*="apple-touch-icon"]').attr('href') + '" height="40">'
                     });
 });
 

@@ -13,7 +13,7 @@ A user-script is obviously not ideal for any number of reasons, including condit
  - Limit the width of the topbar to prevent clipping of items on the right-hand side by the scroll bar, especially when using narrow browser windows.
  - Increase the font size on the numerical notification badges (inbox, achievements, reputation, badges, and moderator flags).
  - Decrease the height of the search box slightly, to make it less imposing and awkward-looking.
- - Make the "Stack Exchange" logo in the top-left corner into a link that navigates to the current site (instead of just being a static logo).
+ - Replace the static "Stack Exchange" logo in the top-left corner with an image of the current site's logo (based on the `apple-touch-icon`, which is large enough that it can be scaled down without looking horrible) that also serves as a link to the current site's homepage (like the Stack Overflow logo in its topbar).
  - Swap the order of the gravatar/reputation and navigation/alerts icons, as well as reorder the navigation/alerts icons to put the moderator tools in the center.
  
    Yes, this works fine on sites where you are not a moderator. It even brings some degree of visual and design consistency, because the items you *do* have are more likely to stay in the same places when switching sites.
