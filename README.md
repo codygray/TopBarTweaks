@@ -8,6 +8,8 @@ The changes here are heavily inspired by the whinings of Stack Exchange network 
 
 A user-script is obviously not ideal for any number of reasons, including conditional availability, limited browser support, and decreases in rendering speed. However, it's the best we can do for now, unless and until Stack Exchange decides to heed the community's wishes and fix the problems.
 
+![Example screenshot of the tweaked topbar on Meta Stack Exchange for a user without moderator privileges](MSE_nomod.png)
+
 ### Supported Tweaks:
 
  - Limit the width of the topbar to prevent clipping of items on the right-hand side by the scroll bar, especially when using narrow browser windows.
