@@ -21,10 +21,6 @@ GM_addStyle(GM_getResourceText('TBTCustomCSS'));;
 // Tweak notification/navigation icons.
 var notifyIcons = $('.top-bar .secondary-nav ol.-list');
 
-/////// DEBUG CODE!
-notifyIcons.append('<li class="-item _has-divider" style="order: 6;"><a href="#" class="-link js-mod-inbox-button " data-url="/topbar/mod-inbox" data-unread-class="" title="Moderator inbox"><svg aria-hidden="true" class="svg-icon iconModerator" width="18" height="18" viewBox="0 0 18 18"><path d="M8.4.78c.33-.43.87-.43 1.2 0l5.8 7.44c.33.43.33 1.13 0 1.56l-5.8 7.44c-.33.43-.87.43-1.2 0L2.6 9.78a1.34 1.34 0 0 1 0-1.56L8.4.78z"></path></svg></a></li><li class="-item" style="order: 7;"><a href="/admin/dashboard" class="-link _text-only" title="169 posts flagged for moderator attention"><span class="indicator-badge _regular">9753</span></a></li>');
-/////// !DEBUG CODE
-
 var inbox = notifyIcons.find('.js-inbox-button');
 inbox.attr('href', '/topbar/inbox');
 var inboxParent = inbox.parent();
