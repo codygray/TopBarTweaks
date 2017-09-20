@@ -5,70 +5,86 @@
  * Custom CSS styles
  *************************************************/
 
-/* Do you want the topbar to be "sticky"? */
 /*
-.top-bar
-{
-  position: fixed;
-}
-*/
-
-/* Prevent clipping of items when using narrow browser window */
-@media screen and (max-width: 1090px)
-{
-  .top-bar .-container
-  {
-    max-width: 98vw;
-  }
-}
-@media screen and (max-width: 920px)
-{
-  .top-bar .-container
-  {
-    max-width: 98vw;
-  }
-}
+ * Larger, more readable text sizes
+ * 
+ * The default is just to make these a little bit larger, for those with young eyes.
+ * If you still have trouble seeing them, LargeFonts.css will crank up the sizes even more.
+ */
 
 .top-bar .secondary-nav .-link .indicator-badge:not(._regular)
 {
-  font-size: 130%;       /* increase font size for readability */
-  top: 7px;              /* vertically center */
-  /*font-weight: bold;*/ /* do you want it bold? */
+  font-size: 93%;
+  top:   2px;  /* offset upwards...                                  */
+  right: 2px;  /* ...and to the left, like on Stack Overflow version */
 }
 .top-bar .secondary-nav .-item .-link:hover .indicator-badge
 {
-  top: 2px;
+  top: 5px;  /* since we offset upwards for improved appearance, hover effect brings it down */
 }
 
-.top-bar .my-profile .-rep,
+.top-bar .my-profile .-rep
+{
+  font-size: 125%;
+  font-weight: normal;
+}
+
 .top-bar .my-profile .-badges .badgecount
 {
-  font-size: 130%;
-/*font-weight: bold;*/ /* do you want it bold? */
+  font-size:   110%;
+  line-height: 110%;
 }
-
 .badge1, .badge2, .badge3
 {
-  margin-bottom: 2px;  /* vertical alignment with larger text size */
+  margin-bottom: 1px;  /* vertical alignment with larger text size */
 }
 
-.top-bar .indicator-badge._regular
+.top-bar .indicator-badge._regular  /* mod flags */
 {
-  font-size: 130%;
-/*font-weight: bold;*/ /* do you want it bold? */
+  font-size: 100%;
+  font-weight: bold;
 }
 
-.top-bar .searchbar input[type="text"].f-input
+
+.top-bar
 {
-  height: 30px;  /* make it less imposing */
+  display: -webkit-box;
+  display:   -moz-box;
+  display:        box;
+
+  -webkit-box-orient: horizontal;
+     -moz-box-orient: horizontal;
+          box-orient: horizontal;
+  
+/*position: fixed;*/ /* Do you want the topbar to be "sticky"? */
 }
 
-/* Swap order of gravatar/reputation and navigation/alerts.
+.top-bar .-main
+{
+  display: none;  /* remove redundant, static "Stack Exchange" logo */
+}
+
+.top-bar .searchbar
+{
+  order: 2;
+  width:     40%;
+  max-width: 40%;
+}
+
+
+/*
+ * Swap order of gravatar/reputation and navigation/alerts.
  * The trick used here is courtesy of thirtydot, via Stack Overflow
  * (https://stackoverflow.com/a/7430355).
  */
 .top-bar .-actions
 {
+  order: 1;
+  margin: 0 auto 0 0;
+  padding: 0;
+  width:     60%;
+  max-width: 60%;
+  
   display: -webkit-box;
   display:   -moz-box;
   display:        box;
@@ -88,6 +104,146 @@
   -webkit-box-ordinal-group: 2;
      -moz-box-ordinal-group: 2;
           box-ordinal-group: 2;
-  border-left: 1px solid rgba(132,141,149,0.2);  /* same divider as used for mod tools */
+  border-left: 1px solid rgba(132,141,149,0.2);  /* same divider as '.top-bar .secondary-nav .-item._has-divider' */
+}
+
+
+/*
+ * Make search box less imposing and more harmonious with other items.
+ */
+
+.top-bar .searchbar input[type="text"].f-input
+{
+  height: 28px;
+}
+.top-bar .searchbar .btn-topbar-primary
+{
+  min-height: 28px;
+  height:     28px;
+  border:     0;
+  box-shadow: none;
+}
+
+
+/*
+ * Left alignment positions of these pop-up dialogs are hard-coded, for maximum ugliness.
+ * 
+ * I'm sure there's a better way to calculate and set these dynamically,
+ * but I do not happen to be someone who knows what that way is!
+ */
+.topbar-dialog.siteSwitcher-dialog
+{
+  left: 15px;
+}
+.topbar-dialog.help-dialog
+{
+  left: 53px;
+}
+.topbar-dialog.inbox-dialog
+{
+  left: 92px;
+}
+.topbar-dialog.achievements-dialog
+{
+  left: 132px;
+}
+.topbar-dialog.review-dialog
+{
+  left: 170px;
+}
+.topbar-dialog.modInbox-dialog
+{
+  left: 208px;
+}
+
+
+/*
+ * "Responsiveness" hackery.
+ */
+
+@media screen and (max-width: 1090px)
+{
+  .top-bar .-container
+  {
+    max-width: 98vw;
+  }
+  
+  .topbar-dialog.siteSwitcher-dialog
+  {
+    left: 0;
+  }
+  .topbar-dialog.help-dialog
+  {
+    left: 38px;
+  }
+  .topbar-dialog.inbox-dialog
+  {
+    left: 77px;
+  }
+  .topbar-dialog.achievements-dialog
+  {
+    left: 117px;
+  }
+  .topbar-dialog.review-dialog
+  {
+    left: 155px;
+  }
+  .topbar-dialog.modInbox-dialog
+  {
+    left: 193px;
+  }
+  
+  .top-bar .my-profile
+  {
+    padding-left: 12px;  /* same as normal/full padding provided for '.top-bar .my-profile' */
+  }
+}
+
+@media screen and (max-width: 920px)
+{
+  .top-bar #search
+  {
+    padding-right: 5px;
+  }
+  .top-bar #search input
+  {
+    margin-bottom: 1px;  /* raise text baseline to center it vertically */
+  }
+}
+
+@media screen and (max-width: 760px)
+{
+  .top-bar .-container
+  {
+    max-width: 97vw;
+  }
+  
+  .top-bar .-actions
+  {
+    width:     66%;
+    max-width: 66%;
+  }
+  .top-bar .searchbar
+  {
+    width:     33%;
+    max-width: 33%;
+  }
+}
+
+@media screen and (max-width: 540px)
+{
+  .top-bar #TBT-help
+  {
+    display: none;  /* hide when we're *very* short on space */
+  }
+  
+  .topbar-dialog.help-dialog,
+  .topbar-dialog.inbox-dialog,
+  .topbar-dialog.achievements-dialog,
+  .topbar-dialog.review-dialog,
+  .topbar-dialog.modInbox-dialog
+  {
+    left: 0;
+  }
 }
 

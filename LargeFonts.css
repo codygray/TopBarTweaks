@@ -1,0 +1,37 @@
+/*************************************************
+ * TopBarTweaks, by Cody Gray
+ * (licensed under CC BY)
+ * 
+ * Large font CSS styles
+ *************************************************/
+
+.top-bar .secondary-nav .-link .indicator-badge:not(._regular)
+{
+  font-size: 130%;
+  top: 6px;
+}
+.top-bar .secondary-nav .-item .-link:hover .indicator-badge
+{
+  top: 3px;
+}
+
+.top-bar .my-profile .-rep
+{
+  font-size: 139%;
+}
+
+.top-bar .my-profile .-badges .badgecount
+{
+  font-size: 125%;
+  line-height: 90%;
+}
+.badge1, .badge2, .badge3
+{
+  margin-bottom: 1px;  /* vertical alignment with larger text size */
+}
+
+.top-bar .indicator-badge._regular  /* mod flags */
+{
+  font-size: 130%;
+  font-weight: bold;
+}

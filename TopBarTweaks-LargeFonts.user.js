@@ -5,6 +5,7 @@
 // @version     0.2
 // @namespace   https://github.com/codygray
 // @resource    TBTCustomCSS TopBarTweaks.css
+// @resource    TBTLargeFonts LargeFonts.css
 // @grant       GM_getResourceText
 // @grant       GM_addStyle
 // @match       *://*.stackexchange.com/*
@@ -16,7 +17,8 @@
 // ==/UserScript==
 
 // Apply custom CSS.
-GM_addStyle(GM_getResourceText('TBTCustomCSS'));;
+GM_addStyle(GM_getResourceText('TBTCustomCSS'));
+GM_addStyle(GM_getResourceText('TBTLargeFonts'));
 
 // Tweak notification/navigation icons.
 var notifyIcons = $('.top-bar .secondary-nav ol.-list');
